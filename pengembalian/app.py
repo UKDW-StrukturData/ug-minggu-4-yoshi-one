@@ -8,14 +8,9 @@ st.title("Sistem Pengembalian Buku")
 pilihan = st.selectbox("Pilih skenario uji:", [tc["name"] for tc in test_cases])
 tc = next(tc for tc in test_cases if tc["name"] == pilihan)
 
-# =====================================================
-# Bonus: uncomment variabel (pemberitahuan, sukses, gagal)
-# kemudian definisikan value yang seharusnya
-# =====================================================
-
-# pemberitahuan = 
-# sukses = 
-# gagal = 
+pemberitahuan = st.info
+sukses = st.success
+gagal = st.error 
 
 if st.button("Proses Pengembalian"):
     result = process_pengembalian(copy.deepcopy(tc["buku"]), copy.deepcopy(tc["mahasiswa"]))
